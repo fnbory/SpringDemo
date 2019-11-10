@@ -1,10 +1,10 @@
 package com.example.springdemo.config;
 
-import com.example.springdemo.Bean.Student;
+import com.example.springdemo.Bean.Account;
 import com.example.springdemo.Bean.User;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * @Author: fnbory
@@ -23,4 +23,15 @@ public class config {
     public BfProcessor bfProcessor(){
         return new BfProcessor();
     }
+
+    @Bean
+    public MyBeanPostProcessor beanPostProcessor(){
+        MyBeanPostProcessor myBeanPostProcessor=new MyBeanPostProcessor();
+        return myBeanPostProcessor;
+    }
+    @Bean(initMethod = "init",destroyMethod = "close")
+    public Account account(){
+        return new Account("fff");
+    }
+
 }

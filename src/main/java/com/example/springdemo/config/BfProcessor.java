@@ -25,11 +25,11 @@ public class BfProcessor implements BeanDefinitionRegistryPostProcessor {
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        for(String befinition:registry.getBeanDefinitionNames()) System.out.println(befinition);
-
-        BeanDefinitionHolder holder = createBeanDefinition(Student.class.getName());
-        BeanDefinitionReaderUtils.registerBeanDefinition(holder, registry);
-        System.out.println(registry.getBeanDefinition("student"));
+//        for(String befinition:registry.getBeanDefinitionNames()) System.out.println(befinition);
+//
+//        BeanDefinitionHolder holder = createBeanDefinition(Student.class.getName());
+//        BeanDefinitionReaderUtils.registerBeanDefinition(holder, registry);
+//        System.out.println(registry.getBeanDefinition("student"));
     }
 
     private BeanDefinitionHolder createBeanDefinition(String className) {
